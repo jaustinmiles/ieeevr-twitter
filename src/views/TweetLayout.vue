@@ -7,16 +7,16 @@
                 <div class="card medium">
                     <div class="card-content">
                             <div class="row">
-                                <div class="col s3">
-                                    <img class="profile-img" :src="tweet.img" alt="">
+                                <div  class="col s3">
+                                    <img data-layer class="profile-img" :src="tweet.img" alt="">
                                 </div>
-                                <div class="col s9">
-                                    <div class="row name-row"><p class="screen-name">{{tweet.name}}</p></div>
+                                <div data-layer class="col s9 user-data">
+                                    <div data-layer class="row name-row"><p class="screen-name">{{tweet.name}}</p></div>
                                     <div class="row user-name-row"><p class="user-name">{{tweet.user_name}}</p></div>
                                 </div>
                             </div>
                             <div class="row">
-                                <p>{{tweet.body}}</p>
+                                <p class="main-body">{{tweet.body}}</p>
                             </div>
                             <div class="row icons">
                                     <div class="col s6" style="text-align: center">
@@ -40,6 +40,7 @@
 </template>
 
 <script>
+    // import domtoimage from 'dom-to-image';
     import TweetGetter from "../../TweetGetter";
     import Vue from 'vue'
     const tweetGetter = new TweetGetter();
@@ -78,6 +79,17 @@
                     item.style.maxHeight = `${cw}px`;
                 })
             }.bind(this))
+            // setTimeout( () => {
+            //     let app = document.getElementById("app");
+            //     domtoimage.toJpeg(app)
+            //         .then(function (dataUrl) {
+            //             var link = document.createElement('a');
+            //             link.download = 'my-image-name.jpeg';
+            //             link.href = dataUrl;
+            //             link.click();
+            //         });
+            // }, 100)
+
         }
     }
 </script>
@@ -86,9 +98,13 @@
     .profile-img {
         width: 100%;
         border-radius: 50%;
+        /*margin-right: 125%;*/
     }
     .wrapper {
         margin-top: 50px;
+    }
+    .user-data {
+        width: 100%;
     }
     .user-name-row {
         margin-top: 0;
@@ -97,11 +113,14 @@
     .name-row {
         margin-bottom: 0;
         margin-top: 4%;
-        padding-left: 5px;
+        padding-left: 10px;
+        /*margin-right: 150%;*/
     }
     .screen-name {
         font-weight: 500;
         font-size: x-large;
+        width: 100%;
+        /*margin-right: 300%;*/
     }
     .user-name {
         color: #888;

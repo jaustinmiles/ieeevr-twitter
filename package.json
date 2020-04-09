@@ -10,8 +10,14 @@
   "dependencies": {
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
+    "dat.gui": "^0.7.6",
+    "dom-to-image": "^2.6.0",
+    "ethereal": "^1.0.1",
+    "file-saver": "^2.0.2",
     "jquery": "^3.4.1",
     "materialize-css": "^1.0.0-rc.2",
+    "three": "^0.103",
+    "three-web-layer": "^2.0.13",
     "vue": "^2.6.11"
   },
   "devDependencies": {
